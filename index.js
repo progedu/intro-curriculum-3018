@@ -6,7 +6,7 @@ let server = http.createServer((req, res) => {
   res.end(req.headers.cookie);
 });
 let port = 8000;
-server.listen(8000, () => {
+server.listen(port, () => {
   console.info('Listening on ' + port);
 });
 
