@@ -1,11 +1,11 @@
 'use strict';
-let http = require('http');
-let server = http.createServer((req, res) => {
-  let now = new Date().getTime();
+const http = require('http');
+const server = http.createServer((req, res) => {
+  const now = new Date().getTime();
   res.setHeader('Set-Cookie', 'last_access=' + now + ';');
   res.end(req.headers.cookie);
 });
-let port = 8000;
+const port = 8000;
 server.listen(port, () => {
   console.info('Listening on ' + port);
 });
