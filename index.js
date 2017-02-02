@@ -11,7 +11,6 @@ const server = http.createServer((req, res) => {
   if(req.url !== '/favicon.ico') {
     accessed++;
   }
-  /*accessed++;*/
   console.log(req.headers.cookie);
   res.setHeader('Set-Cookie', 'last_access=' + now + ', access_counts=' + accessed + ';expires=Mon, 07 Jan 2036 00:00:00 GMT;');
   const last_access_time = req.headers.cookie ? parseInt(req.headers.cookie.split('last_access=')[1]) : now;
