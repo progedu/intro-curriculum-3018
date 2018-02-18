@@ -2,7 +2,7 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
   const expire = new Date(2036,0,7);
-  res.setHeader('Set-Cookie', 'expire=' + expire + ';');
+  res.setHeader('Set-Cookie', 'expires=' + expire + ';');
   res.end('expire=' + expire);
 });
 const port = 8000;
