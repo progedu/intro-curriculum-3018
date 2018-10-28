@@ -2,8 +2,8 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
   const now = new Date().getTime();
-  // Cookieデータのセット
-  res.setHeader('Set-Cookie', `last_access=${now};`);
+  // Cookieデータのセット(レスポンスヘッダのSet-Cookieヘッダに記述すればよい)
+  res.setHeader('Set-Cookie', `last_access=${now}; expires=Mon, 07 Jan 2036 00:00:00 GMT;`);
   
   // Cookieをreq.headers.cookieで取得し、取得できた場合はそれを、できなかった場合はnowを使う
   // ※ sample: "last_access=1452147999931".split('last_access=') => ["", "1452147999931"]
