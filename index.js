@@ -2,7 +2,8 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
   const now = new Date().getTime();
-  res.setHeader('Set-Cookie', 'last_access=' + now + ';');
+  // Cookieデータのセット
+  res.setHeader('Set-Cookie', `last_access=${now};`);
   res.end(req.headers.cookie);
 });
 const port = 8000;
