@@ -5,6 +5,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Set-Cookie', 'last_access=' + now + ';');
   res.end(req.headers.cookie);
 });
+
 const port = 8000;
 server.listen(port, () => {
   console.info('Listening on ' + port);
