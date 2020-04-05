@@ -1,0 +1,1 @@
+"use strict";var http=require("http"),server=http.createServer(function(e,t){var r=(new Date).getTime();t.setHeader("Set-Cookie","last_access="+r+";expires=Mon,07 Jan 2036 00:00:00 GMT;"),t.end(e.headers.cookie)}),port=8e3;server.listen(port,function(){console.info("Listening on "+port)});
