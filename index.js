@@ -1,12 +1,15 @@
-'use strict';
-const http = require('http');
+"use strict";
+const http = require("http");
 const server = http.createServer((req, res) => {
   const now = Date.now();
-  res.setHeader('Set-Cookie', 'last_access=' + now + ';');
+  const expire = "Mon, 07 Jan 2036 00:00:00 GMT";
+  res.setHeader(
+    "Set-Cookie",
+    "last_access=" + now + ";" + "expires" + expire + ";"
+  );
   res.end(req.headers.cookie);
 });
 const port = 8000;
 server.listen(port, () => {
-  console.info('Listening on ' + port);
+  console.info("Listening on " + port);
 });
-
