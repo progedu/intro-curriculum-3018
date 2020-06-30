@@ -1,8 +1,8 @@
 'use strict';
 const http = require('http');
 const server = http.createServer((req, res) => {
-  const now = new Date().getTime();
-  res.setHeader('Set-Cookie', 'last_access=' + now + ';');
+  const now = Date.now();
+  res.setHeader('Set-Cookie', 'last_access=' + now + ';' + ' expires=' + new Date(2036, 0, 7) + ';');
   res.end(req.headers.cookie);
 });
 const port = 8000;
