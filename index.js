@@ -2,7 +2,7 @@
 const http = require('http');
 const server = http.createServer((req, res) => {
   const now = new Date().getTime();
-  res.setHeader('Set-Cookie', `last_access=${now};expires = Mon, 07 Jan 2036 00:00:00 GMT;`);
+  res.setHeader('Set-Cookie', `last_access=${now};expires = Mon, 07 Jan 2037 00:00:00 GMT;`);
   const last_access_time = now;
   res.end(new Date(now).toString());
 });
